@@ -19,20 +19,5 @@ client.on('ready', async () => {
         testServers: ['817382286378008617'],
         mongoUri: process.env.MONGO_URI,
     })
-
-    const guildID = '817382286378008617'
-    const guild = client.guilds.cache.get(guildID)
-    let commands 
-
-    if (guild) {
-        commands = guild.commands
-    } else {
-        commands = client.application?.commands
-    }
-
-    commands.create({
-        name:"profile",
-        description:"test canvas command",
-    })
 })
 client.login(process.env.TOKEN)

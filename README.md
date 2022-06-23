@@ -4,7 +4,7 @@
 ## Commands
 #### Carrier Mission Commands
 `/load (nactag carriername carrierid commodity station system profit units)` - Gives an image and post text using provided paramaters for carrier loading. 
-`/unload (nactag carriername carrierid commodity station system profit units)` - Gives an image and post text using provided paramaters for carrier unloading.
+ `/unload (nactag carriername carrierid commodity station system profit units)` - Gives an image and post text using provided paramaters for carrier unloading.
 #### WOKCommands Commands
 `/channelonly (command) [channel]` - Makes a command only work in some channels 
 `/command (action command)` - Enables or disables a command for the server

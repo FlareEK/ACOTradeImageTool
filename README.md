@@ -1,7 +1,7 @@
 # ACO Trade Image Helper
 ### A Simple Discord Tool for ACOs to create carrier images for their carrier.
-Invite Link: https://discord.com/api/oauth2/authorize?client_id=989186785395474442&permissions=379968&scope=bot%20applications.commands  
-When Hosting the Bot yourself, 379968 is the permissions required and scopes are applications.commands and bot.
+Invite Link: https://discord.com/api/oauth2/authorize?client_id=989290622676533259&permissions=137439333440&scope=bot%20applications.commands  
+When Hosting the Bot yourself, 137439333440 is the permissions required and scopes are applications.commands and bot.
 ## Commands
 #### Carrier Mission Commands
 `/load (nactag carriername carrierid commodity station system profit units)` 

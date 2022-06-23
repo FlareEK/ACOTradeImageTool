@@ -1,6 +1,6 @@
 # ACO Trade Image Helper
 ### A Simple Discord Tool for ACOs to create carrier images for their carrier.
-Invite Link: https://discord.com/api/oauth2/authorize?client_id=989186785395474442&permissions=379968&scope=bot%20applications.commands
+Invite Link: https://discord.com/api/oauth2/authorize?client_id=989186785395474442&permissions=379968&scope=bot%20applications.commands  
 When Hosting the Bot yourself, 379968 is the permissions required and scopes are applications.commands and bot.
 ## Commands
 #### Carrier Mission Commands

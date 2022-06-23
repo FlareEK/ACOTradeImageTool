@@ -4,7 +4,7 @@ module.exports = {
     description: 'Returns a Pong GIF.',
 
     slash: true,
-    testOnly: true,
+    testOnly: false, // False=Global which takes one hour to populate.
     
 
     callback: ({}) => {

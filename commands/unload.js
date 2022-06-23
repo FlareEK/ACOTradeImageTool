@@ -10,7 +10,7 @@ module.exports = {
     category: "Carrier Missions",
     description: "Gives text and an image for a Carrier Unloading Mission.",
     slash: true,
-    testOnly: true,
+    testOnly: false, // False=Global which takes one hour to populate.
     minArgs: 8,
     expectedArgs: '<nactag> <CarrierName> <CarrierID> <Commodity> <Station> <System> <Profit> <Units>',
     options: [

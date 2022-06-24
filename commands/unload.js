@@ -77,8 +77,8 @@ module.exports = {
     callback: async ({ interaction }) => {
         // Retreving Inputs from Options
         var nactag
-        var carrierlogo = interaction.options.getAttachment('carrierlogo').url
-        var wallpaper = interaction.options.getAttachment('background').url
+        var carrierlogo
+        var wallpaper
         let CarrierName = interaction.options.getString('carriername') 
         let CarrierID = interaction.options.getString('carrierid')
         var Commodity = interaction.options.getString('commodity')
@@ -89,10 +89,14 @@ module.exports = {
         // Setting a Default Background
         if (interaction.options.getAttachment('background') == null) {
           var wallpaper = path.join(__dirname, '../wallpaper.png')
+        } else {
+          var wallpaper = interaction.options.getAttachment('background').url
         }
         // Setting a Default Carrier Logo
         if (interaction.options.getAttachment('carrierlogo') == null) {
           var carrierlogo = path.join(__dirname, '../profile-image.png')
+        } else {
+          var carrierlogo = interaction.options.getAttachment('carrierlogo').url
         }
         // Spell Correcting Agronomic Treatment 
         const agro = 'Agronomic Treatment'

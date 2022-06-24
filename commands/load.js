@@ -8,7 +8,6 @@ module.exports = {
     description: "Gives text and an image for a Carrier Loading Mission.",
     slash: true,
     testOnly: false,
-    minArgs: 8,
 
     options: [
       {

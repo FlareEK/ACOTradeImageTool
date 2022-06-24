@@ -123,11 +123,11 @@ module.exports = {
         const attachment = new MessageAttachment(canvas.toBuffer(('image/png'), '../carrier-image.png'))
         const embed = new MessageEmbed()
         .setTitle("Carrier Unloading Mission Post")
-        .setDescription(`**${nactag} ${CarrierName} (${CarrierID})** is **unloading** ${Commodity} to **${Station}** in the **${System}** system. **${Profit}k**/u Profit, **${Units}** units.`)
+        .setDescription(`\`**${nactag} ${CarrierName} (${CarrierID})** is **unloading** ${Commodity} to **${Station}** in the **${System}** system. **${Profit}k**/u Profit, **${Units}** units.\``)
         .setColor("GREEN")
         const newMessage = await interaction.reply({
             embeds: [embed],
-            files: [attachment]
+            files: [attachment],
         })
     },
 }

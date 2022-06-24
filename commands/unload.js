@@ -1,4 +1,4 @@
-const DiscordJS = require('discord.js)
+const DiscordJS = require('discord.js')
 const { MessageEmbed, MessageAttachment } = require('discord.js')
 const Canvas = require('canvas')
 const path = require('path')

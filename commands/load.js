@@ -124,7 +124,7 @@ module.exports = {
         const attachment = new MessageAttachment(canvas.toBuffer(('image/png'), '../carrier-image.png'))
         const embed = new MessageEmbed()
         .setTitle("Carrier Loading Mission Post")
-        .setDescription(`**${nactag} ${CarrierName} (${CarrierID})** is **loading** ${Commodity} from **${Station}** in the **${System}** system. **${Profit}k**/u Profit, **${Units}** units.`)
+        .setDescription(`\`**${nactag} ${CarrierName} (${CarrierID})** is **loading** ${Commodity} from **${Station}** in the **${System}** system. **${Profit}k**/u Profit, **${Units}** units.\``)
         .setColor("#00c9cc")
 
         const newMessage = await interaction.reply({

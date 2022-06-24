@@ -1,5 +1,5 @@
 const DiscordJS = require('discord.js')
-const { MessageEmbed, MessageAttachment } = require('discord.js')
+const { MessageEmbed, MessageAttachment, interaction } = require('discord.js')
 const Canvas = require('canvas')
 const path = require('path')
 
@@ -7,7 +7,7 @@ module.exports = {
     category: "Carrier Missions",
     description: "Gives text and an image for a Carrier Loading Mission.",
     slash: true,
-    testOnly: false, // False=Global which takes 1hr to populate.
+    testOnly: false,
     minArgs: 8,
 
     options: [
@@ -75,10 +75,11 @@ module.exports = {
     ],
 
     callback: async ({ interaction }) => {
-        // Retreving Inputs from Options
+        // Declaring Variables for Options
         var nactag
         var carrierlogo
         var wallpaper
+        // Retreving Inputs from Options
         let CarrierName = interaction.options.getString('carriername') 
         let CarrierID = interaction.options.getString('carrierid')
         var Commodity = interaction.options.getString('commodity')
@@ -100,9 +101,9 @@ module.exports = {
         }
         // Spell Correcting Agronomic Treatment
         const agro = 'Agronomic Treatment'
-        if (Commodity = 'agro') {
+        if (Commodity === 'agro') {
             var Commodity = agro
-        } else if (Commodity = 'Agro') {
+        } else if (Commodity === 'Agro') {
             var Commodity = agro
         }
         // Setting NAC Tag Output

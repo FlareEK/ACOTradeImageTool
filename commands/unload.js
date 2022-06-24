@@ -128,6 +128,7 @@ module.exports = {
         const newMessage = await interaction.reply({
             embeds: [embed],
             files: [attachment],
+            ephemeral: true,
         })
     },
 }

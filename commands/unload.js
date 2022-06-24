@@ -8,8 +8,9 @@ module.exports = {
     category: "Carrier Missions",
     description: "Gives text and an image for a Carrier Unloading Mission.",
     slash: true,
-    testOnly: false, // False=Global which takes one hour to populate.
+    testOnly: false,
     minArgs: 8,
+    
     options: [
       {
         name: 'nactag',
@@ -75,10 +76,11 @@ module.exports = {
     ],
 
     callback: async ({ interaction }) => {
-        // Retreving Inputs from Options
+        // Declaring Variables for Options
         var nactag
         var carrierlogo
         var wallpaper
+        // Retreving Inputs from Options
         let CarrierName = interaction.options.getString('carriername') 
         let CarrierID = interaction.options.getString('carrierid')
         var Commodity = interaction.options.getString('commodity')
@@ -100,9 +102,9 @@ module.exports = {
         }
         // Spell Correcting Agronomic Treatment 
         const agro = 'Agronomic Treatment'
-        if (Commodity = 'agro') {
+        if (Commodity === 'agro') {
             var Commodity = agro
-        } else if (Commodity = 'Agro') {
+        } else if (Commodity === 'Agro') {
             var Commodity = agro
         }
         // Setting NAC Tag Output
@@ -140,9 +142,10 @@ module.exports = {
         ctx.fillStyle = '#ffffff';
         ctx.fillText('Now Unloading', 35, 265);
         const attachment = new MessageAttachment(canvas.toBuffer(('image/png'), '../carrier-image.png'))
+        console.log(background)
         const embed = new MessageEmbed()
         .setTitle("Carrier Unloading Mission Post")
-        .setDescription(`\`**${nactag} ${CarrierName} (${CarrierID})** is **unloading** ${Commodity} to **${Station}** in the **${System}** system. **${Profit}k**/u Profit, **${Units}** units.\``)
+        .setDescription(`\`**${nactag} ${CarrierName} (${CarrierID})** is **loading** ${Commodity} from **${Station}** in the **${System}** system. **${Profit}k**/u Profit, **${Units}** units.\``)
         .setColor("GREEN")
         const newMessage = await interaction.reply({
             embeds: [embed],

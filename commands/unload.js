@@ -10,7 +10,6 @@ module.exports = {
     slash: true,
     testOnly: false, // False=Global which takes one hour to populate.
     minArgs: 8,
-    expectedArgs: '<nactag> <CarrierName> <CarrierID> <Commodity> <Station> <System> <Profit> <Units>',
     options: [
       {
         name: 'nactag',

@@ -60,11 +60,25 @@ module.exports = {
         required: true,
         type: DiscordJS.Constants.ApplicationCommandOptionTypes.STRING,
       },
+      {
+        name: 'background',
+        description: 'The background of your mission image',
+        required: false,
+        type: DiscordJS.Constants.ApplicationCommandOptionTypes.ATTACHMENT,
+      },
+      {
+        name: 'carrierlogo',
+        description: 'The logo of your fleet carrier.',
+        required: false,
+        type: DiscordJS.Constants.ApplicationCommandOptionTypes.ATTACHMENT,
+      },
     ],
 
     callback: async ({ interaction }) => {
         // Retreving Inputs from Options
         var nactag
+        var carrierlogo = interaction.options.getAttachment('carrierlogo').url
+        var wallpaper = interaction.options.getAttachment('background').url
         let CarrierName = interaction.options.getString('carriername') 
         let CarrierID = interaction.options.getString('carrierid')
         var Commodity = interaction.options.getString('commodity')
@@ -72,6 +86,14 @@ module.exports = {
         let System = interaction.options.getString('system')
         let Profit = interaction.options.getString('profit')
         let Units = interaction.options.getString('units')
+        // Setting a Default Background
+        if (interaction.options.getAttachment('background') == null) {
+          var wallpaper = path.join(__dirname, '../wallpaper.png')
+        }
+        // Setting a Default Carrier Logo
+        if (interaction.options.getAttachment('carrierlogo') == null) {
+          var carrierlogo = path.join(__dirname, '../profile-image.png')
+        }
         // Spell Correcting Agronomic Treatment
         const agro = 'Agronomic Treatment'
         if (Commodity = 'agro') {
@@ -88,15 +110,11 @@ module.exports = {
         // Making the Image Canvas
         const canvas = Canvas.createCanvas(1024, 512)
         const ctx = canvas.getContext('2d')
-        const background = await Canvas.loadImage(
-          path.join(__dirname, '../wallpaper.png')
-        ) 
+        const background = await Canvas.loadImage(wallpaper)
         // Making the Elite Trader Icon
         ctx.drawImage(background, 0, 0, canvas.width, canvas.height)
-        const trader = await Canvas.loadImage(
-          path.join(__dirname, '../profile-image.png')
-        )
-        ctx.drawImage(trader, 25, 400, 90, 90)
+        const trader = await Canvas.loadImage(carrierlogo)
+        ctx.drawImage(trader, 25, 400, 100, 100)
         // Making The Carrier Name Text
         ctx.font = '60px sans-serif';
         ctx.fillStyle = '#ffffff';

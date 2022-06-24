@@ -9,7 +9,6 @@ module.exports = {
     description: "Gives text and an image for a Carrier Unloading Mission.",
     slash: true,
     testOnly: false,
-    minArgs: 8,
     
     options: [
       {
